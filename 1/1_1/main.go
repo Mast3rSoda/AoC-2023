@@ -60,7 +60,7 @@ func main() {
 			}
 			fmt.Printf("found number %d in line %d\n", x, i+1)
 
-			//a
+			//atomic add since we use parallelism
 			atomCounter.Add(int32(x))
 			wg.Done()
 		}(i, line)
